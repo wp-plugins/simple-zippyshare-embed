@@ -20,6 +20,10 @@ This plugin converts all zippyshare links in your Wordpress content into zippysh
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to plugin settings page and choose your colors and width :)
 
+== Frequently Asked Questions ==
+
+If you want to ask me about this plugin - just ask :)
+
 == Screenshots ==
 
 1. Plugin settings page
@@ -29,3 +33,8 @@ This plugin converts all zippyshare links in your Wordpress content into zippysh
 
 = 1.0 =
 * Initial release
+
+== Upgrade Notice ==
+
+= 1.0 =
+This is the first version of plugin.
