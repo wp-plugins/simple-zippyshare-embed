@@ -3,7 +3,7 @@
  * Plugin Name: Simple Zippyshare Embed
  * Plugin URI: http://it-maniak.pl
  * Description: Replace all zippyshare links to embed media.
- * Version: 1.1
+ * Version: 1.2
  * Author: Adam Stachowicz
  * Author URI: http://it-maniak.pl
  * License: GPLv2
@@ -33,7 +33,7 @@ register_uninstall_hook( __FILE__, 'zippy_delete_options' );
 
 // set default zippy values
 function zippy_set_up_options() {
-    add_option( 'zippydownbutt', 'under' );
+    add_option( 'zippydownbutt', 'above' );
     add_option( 'zippyvol', '80' );
     add_option( 'zippywidth', '850' );
     // colors

@@ -4,7 +4,7 @@ Donate link: http://it-maniak.pl/donate/
 Tags: media, embed, zippy, zippyshare, link, links, colors, music, mp3, plugin, music player
 Requires at least: 3.0
 Tested up to: 3.9.1
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,7 +22,9 @@ This plugin converts all zippyshare links in your Wordpress content into zippysh
 
 == Frequently Asked Questions ==
 
-If you want to ask me about this plugin - just ask :)
+= How can I change the download button? =
+
+Just put your `download_button.png` to the `images` folder and replace it
 
 == Screenshots ==
 
@@ -31,6 +33,10 @@ If you want to ask me about this plugin - just ask :)
 3. Working plugin
 
 == Changelog ==
+
+= 1.2 =
+* Added download button - you can change it in images folder
+* Updated polish translation
 
 = 1.1 =
 * Prepare for translations
@@ -41,6 +47,9 @@ If you want to ask me about this plugin - just ask :)
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.2 =
+Added download button - you can change it in images folder
 
 = 1.1 =
 This version can be translated
