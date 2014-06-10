@@ -27,7 +27,8 @@ If you want to ask me about this plugin - just ask :)
 == Screenshots ==
 
 1. Plugin settings page
-2. Working plugin
+2. You must only put some zippyshare links to your Wordpress content
+3. Working plugin
 
 == Changelog ==
 
