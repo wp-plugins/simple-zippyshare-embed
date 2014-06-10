@@ -33,6 +33,7 @@ register_uninstall_hook( __FILE__, 'zippy_delete_options' );
 
 // set default zippy values
 function zippy_set_up_options() {
+    add_option( 'zippydownbutt', 'under' );
     add_option( 'zippyvol', '80' );
     add_option( 'zippywidth', '850' );
     // colors
@@ -45,6 +46,7 @@ function zippy_set_up_options() {
 
 // Cleaning after uninstall
 function zippy_delete_options() {
+    delete_option( 'zippydownbutt' );
     delete_option( 'zippyvol' );
     delete_option( 'zippywidth' );
     delete_option( 'zippytext' );
@@ -69,7 +71,20 @@ function zippy_replace_links_to_embed( $the_content ) {
 	    $zippyfile = esc_attr( $data[2] );
 	    
 	    // Modify content
-	    $the_content = str_replace( $zippylink, '<script type="text/javascript">var zippywww="'. $zippywww .'";var zippyfile="'. $zippyfile .'";var zippytext="'. get_option('zippytext') .'";var zippyback="'. esc_attr( get_option('zippyback') ).'";var zippyplay="'. esc_attr( get_option('zippyplay') ) .'";var zippywidth='. esc_attr( get_option('zippywidth') ) .';var zippyauto='. $zippyauto .';var zippyvol='. esc_attr( get_option('zippyvol') ) .';var zippywave = "'. esc_attr( get_option('zippywave') ) .'";var zippyborder = "'. esc_attr( get_option('zippyborder') ) .'";</script><script type="text/javascript" src="http://api.zippyshare.com/api/embed_new.js"></script>', $the_content );
+	    // Button above
+	    if ( esc_attr( get_option( 'zippydownbutt' ) ) == 'above' ) {
+		$the_content = str_replace( $zippylink, '<div style="text-align:center;"><a href="'. $zippylink .'"><img align="middle" src="'. plugins_url( '/images/download_button.png', __FILE__ ) .'" /></a></div><br />'
+			. '<script type="text/javascript">var zippywww="'. $zippywww .'";var zippyfile="'. $zippyfile .'";var zippytext="'. get_option( 'zippytext' ) .'";var zippyback="'. esc_attr( get_option( 'zippyback' ) ).'";var zippyplay="'. esc_attr( get_option( 'zippyplay' ) ) .'";var zippywidth='. esc_attr( get_option( 'zippywidth' ) ) .';var zippyauto='. $zippyauto .';var zippyvol='. esc_attr( get_option( 'zippyvol' ) ) .';var zippywave = "'. esc_attr( get_option( 'zippywave' ) ) .'";var zippyborder = "'. esc_attr( get_option( 'zippyborder' ) ) .'";</script><script type="text/javascript" src="http://api.zippyshare.com/api/embed_new.js"></script>', $the_content );
+	    }
+	    // Button under
+	    elseif ( esc_attr( get_option( 'zippydownbutt' ) ) == 'under' ) {
+		$the_content = str_replace( $zippylink, '<script type="text/javascript">var zippywww="'. $zippywww .'";var zippyfile="'. $zippyfile .'";var zippytext="'. get_option( 'zippytext' ) .'";var zippyback="'. esc_attr( get_option( 'zippyback' ) ).'";var zippyplay="'. esc_attr( get_option( 'zippyplay' ) ) .'";var zippywidth='. esc_attr( get_option( 'zippywidth' ) ) .';var zippyauto='. $zippyauto .';var zippyvol='. esc_attr( get_option( 'zippyvol' ) ) .';var zippywave = "'. esc_attr( get_option( 'zippywave' ) ) .'";var zippyborder = "'. esc_attr( get_option( 'zippyborder' ) ) .'";</script><script type="text/javascript" src="http://api.zippyshare.com/api/embed_new.js"></script>'
+			.'<div style="text-align:center;"><a href="'. $zippylink .'"><img align="middle" src="'. plugins_url( '/images/download_button.png', __FILE__ ) .'" /></a></div>', $the_content );
+	    }
+	    // No download button
+	    else {
+		$the_content = str_replace( $zippylink, '<script type="text/javascript">var zippywww="'. $zippywww .'";var zippyfile="'. $zippyfile .'";var zippytext="'. get_option( 'zippytext' ) .'";var zippyback="'. esc_attr( get_option( 'zippyback' ) ).'";var zippyplay="'. esc_attr( get_option( 'zippyplay' ) ) .'";var zippywidth='. esc_attr( get_option( 'zippywidth' ) ) .';var zippyauto='. $zippyauto .';var zippyvol='. esc_attr( get_option( 'zippyvol' ) ) .';var zippywave = "'. esc_attr( get_option( 'zippywave' ) ) .'";var zippyborder = "'. esc_attr( get_option( 'zippyborder' ) ) .'";</script><script type="text/javascript" src="http://api.zippyshare.com/api/embed_new.js"></script>', $the_content );
+	    }
 	}
     }
     // return changed or unchanged content
@@ -80,31 +95,31 @@ function zippy_replace_links_to_embed( $the_content ) {
 add_action( 'the_content', 'zippy_replace_links_to_embed' );
 
 function zippy_create_menu() {
-	// create new options page
-	add_options_page('Simple Zippyshare Embed options', 'Simple Zippyshare Embed', 'administrator', __FILE__, 'zippy_settings_page');
+    // create new options page
+    add_options_page( 'Simple Zippyshare Embed options', 'Simple Zippyshare Embed', 'administrator', __FILE__, 'zippy_settings_page' );
 
-	// call register settings function
-	add_action( 'admin_init', 'zippy_register_settings' );
+    // call register settings function
+    add_action( 'admin_init', 'zippy_register_settings' );
 }
 
-add_action('admin_menu', 'zippy_create_menu');
+add_action( 'admin_menu', 'zippy_create_menu' );
 
 
 function zippy_register_settings() {
-	//register settings
-	register_setting( 'zippy-settings-group', 'zippyvol' );
-	register_setting( 'zippy-settings-group', 'zippywidth' );
-	register_setting( 'zippy-settings-group', 'zippytext' );
-	register_setting( 'zippy-settings-group', 'zippyback' );
-	register_setting( 'zippy-settings-group', 'zippyplay' );
-	register_setting( 'zippy-settings-group', 'zippywave' );
-	register_setting( 'zippy-settings-group', 'zippyborder' );
-	
+    // register settings
+    register_setting( 'zippy-settings-group', 'zippydownbutt' );
+    register_setting( 'zippy-settings-group', 'zippyvol' );
+    register_setting( 'zippy-settings-group', 'zippywidth' );
+    register_setting( 'zippy-settings-group', 'zippytext' );
+    register_setting( 'zippy-settings-group', 'zippyback' );
+    register_setting( 'zippy-settings-group', 'zippyplay' );
+    register_setting( 'zippy-settings-group', 'zippywave' );
+    register_setting( 'zippy-settings-group', 'zippyborder' );
 }
 
 // Localization
 function zippy_translations_init() {
-    load_plugin_textdomain('simple-zippyshare-embed', false, basename( dirname( __FILE__ ) ) . '/languages' );
+    load_plugin_textdomain( 'simple-zippyshare-embed', false, basename( dirname( __FILE__ ) ) . '/languages' );
 }
 
 add_action( 'init', 'zippy_translations_init' );
@@ -119,6 +134,15 @@ function zippy_settings_page() {
 	<?php settings_fields( 'zippy-settings-group' ); ?>
 	<?php do_settings_sections( 'zippy-settings-group' ); ?>
 	<table class="form-table">
+	    <tr valign="top">
+	    <th scope="row"><?php echo __( 'Download Button', 'simple-zippyshare-embed' ); ?></th>
+	    <td><select name="zippydownbutt">
+		    <option value="none" <?php selected( esc_attr( get_option( 'zippydownbutt' ) ), 'none' ); ?> ><?php echo __( 'None', 'simple-zippyshare-embed' ); ?></option>
+		    <option value="above" <?php selected( esc_attr( get_option( 'zippydownbutt' ) ), 'above' ); ?> ><?php echo __( 'Above', 'simple-zippyshare-embed' ); ?></option>
+		    <option value="under" <?php selected( esc_attr( get_option( 'zippydownbutt' ) ), 'under' ); ?> ><?php echo __( 'Under', 'simple-zippyshare-embed' ); ?></option>
+		</select></td>
+	    </tr>
+	    
 	    <tr valign="top">
 	    <th scope="row"><?php echo __( 'Default volume', 'simple-zippyshare-embed' ); ?></th>
 	    <td><input type="number" name="zippyvol" value="<?php echo esc_attr( get_option( 'zippyvol' ) ); ?>" required />%</td>
