@@ -1,7 +1,7 @@
 === Simple Zippyshare Embed ===
 Contributors: Saibamen
 Donate link: http://it-maniak.pl/
-Tags: media, embed, zippy, zippyshare, link, links, colors
+Tags: media, embed, zippy, zippyshare, link, links, colors, music, mp3, plugin, music player
 Requires at least: 3.0
 Tested up to: 3.9.1
 Stable tag: 1.0
