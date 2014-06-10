@@ -1,6 +1,6 @@
 === Simple Zippyshare Embed ===
 Contributors: Saibamen
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=saibamenppl%40gmail%2ecom&lc=PL&item_name=Simple%20Zippyshare%20Embed&no_note=1&no_shipping=1&currency_code=PLN&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
+Donate link: http://it-maniak.pl/donate/
 Tags: media, embed, zippy, zippyshare, link, links, colors, music, mp3, plugin, music player
 Requires at least: 3.0
 Tested up to: 3.9.1
