@@ -1,0 +1,58 @@
+# Copyright (C) 2014 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version:  \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/simple-zippyshare-embed\n"
+"POT-Creation-Date: 2014-06-10 11:52:48+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: zippy-embed.php:109
+msgid "Colors must be in HTML (HEX) format"
+msgstr ""
+
+#: zippy-embed.php:116
+msgid "Default volume"
+msgstr ""
+
+#: zippy-embed.php:121
+msgid "Width"
+msgstr ""
+
+#: zippy-embed.php:126
+msgid "Text and Waveform Progress Color"
+msgstr ""
+
+#: zippy-embed.php:127 zippy-embed.php:132 zippy-embed.php:137
+#: zippy-embed.php:142 zippy-embed.php:147
+msgid "4 characters minimum"
+msgstr ""
+
+#: zippy-embed.php:131
+msgid "Background Color"
+msgstr ""
+
+#: zippy-embed.php:136
+msgid "Play and Full Waveform Color"
+msgstr ""
+
+#: zippy-embed.php:141
+msgid "Waveform Color"
+msgstr ""
+
+#: zippy-embed.php:146
+msgid "Border Color"
+msgstr ""
+
+#: zippy-embed.php:161
+msgid "Save Changes"
+msgstr ""
+
+#: zippy-embed.php:166
+msgid "Plugin by"
+msgstr ""

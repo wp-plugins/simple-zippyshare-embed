@@ -1,0 +1,63 @@
+# Copyright (C) 2014 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Polish language for 1.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/simple-zippyshare-embed\n"
+"POT-Creation-Date: 2014-06-10 11:52:48+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-06-10 14:13+0100\n"
+"Last-Translator: Adam Stachowicz <saibamenppl@gmail.com>\n"
+"Language-Team: Simple Zippyshare Embed <saibamenppl@gmail.com>\n"
+"X-Generator: Poedit 1.6.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"Language: pl_PL\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: zippy-embed.php:109
+msgid "Colors must be in HTML (HEX) format"
+msgstr "Kolory muszą być w formacie HTML (HEX)"
+
+#: zippy-embed.php:116
+msgid "Default volume"
+msgstr "Domyślna głośność"
+
+#: zippy-embed.php:121
+msgid "Width"
+msgstr "Długość"
+
+#: zippy-embed.php:126
+msgid "Text and Waveform Progress Color"
+msgstr "Kolor tekstu i wczytywania fali"
+
+#: zippy-embed.php:127 zippy-embed.php:132 zippy-embed.php:137
+#: zippy-embed.php:142 zippy-embed.php:147
+msgid "4 characters minimum"
+msgstr "Minimum 4 znaki"
+
+#: zippy-embed.php:131
+msgid "Background Color"
+msgstr "Kolor tła"
+
+#: zippy-embed.php:136
+msgid "Play and Full Waveform Color"
+msgstr "Kolor przycisku Play i pełnej fali"
+
+#: zippy-embed.php:141
+msgid "Waveform Color"
+msgstr "Kolor fali"
+
+#: zippy-embed.php:146
+msgid "Border Color"
+msgstr "Kolor obramowania"
+
+#: zippy-embed.php:161
+msgid "Save Changes"
+msgstr "Zapisz zmiany"
+
+#: zippy-embed.php:166
+msgid "Plugin by"
+msgstr "Autor pluginu:"
