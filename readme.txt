@@ -4,7 +4,7 @@ Donate link: http://it-maniak.pl/
 Tags: media, embed, zippy, zippyshare, link, links, colors, music, mp3, plugin, music player
 Requires at least: 3.0
 Tested up to: 3.9.1
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,10 +31,18 @@ If you want to ask me about this plugin - just ask :)
 
 == Changelog ==
 
+= 1.1 =
+* Prepare for translations
+* Added pot file in languages folder
+* Polish translation by me
+
 = 1.0 =
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.1 =
+This version can be translated
 
 = 1.0 =
 This is the first version of plugin.
