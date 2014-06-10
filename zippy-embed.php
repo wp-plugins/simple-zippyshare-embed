@@ -106,45 +106,45 @@ function zippy_settings_page() {
 ?>
     <div class="wrap">
     <h2>Simple Zippyshare Embed</h2>
-    Colors must be in HTML (HEX) format
+    <?php echo __( 'Colors must be in HTML (HEX) format', 'simple-zippyshare-embed' ); ?>
 
     <form method="post" action="options.php">
 	<?php settings_fields( 'zippy-settings-group' ); ?>
 	<?php do_settings_sections( 'zippy-settings-group' ); ?>
 	<table class="form-table">
 	    <tr valign="top">
-	    <th scope="row">Default volume</th>
+	    <th scope="row"><?php echo __( 'Default volume', 'simple-zippyshare-embed' ); ?></th>
 	    <td><input type="number" name="zippyvol" value="<?php echo esc_attr( get_option( 'zippyvol' ) ); ?>" required />%</td>
 	    </tr>
 
 	    <tr valign="top">
-	    <th scope="row">Width</th>
+	    <th scope="row"><?php echo __( 'Width', 'simple-zippyshare-embed' ); ?></th>
 	    <td><input type="number" min="60" name="zippywidth" value="<?php echo esc_attr( get_option( 'zippywidth' ) ); ?>" required />px</td>
 	    </tr>
 
 	    <tr valign="top">
-	    <th scope="row">Text and Waveform Progress Color</th>
-	    <td><input type="color" name="zippytext" value="<?php echo esc_attr( get_option( 'zippytext' ) ); ?>" required pattern=".{4,}" required title="4 characters minimum" /></td>
+	    <th scope="row"><?php echo __( 'Text and Waveform Progress Color', 'simple-zippyshare-embed' ); ?></th>
+	    <td><input type="color" name="zippytext" value="<?php echo esc_attr( get_option( 'zippytext' ) ); ?>" required pattern=".{4,}" required title="<?php echo __( '4 characters minimum', 'simple-zippyshare-embed' ); ?>" /></td>
 	    </tr>
 
 	    <tr valign="top">
-	    <th scope="row">Background Color</th>
-	    <td><input type="color" name="zippyback" value="<?php echo esc_attr( get_option( 'zippyback' ) ); ?>" required pattern=".{4,}" required title="4 characters minimum" /></td>
+	    <th scope="row"><?php echo __( 'Background Color', 'simple-zippyshare-embed' ); ?></th>
+	    <td><input type="color" name="zippyback" value="<?php echo esc_attr( get_option( 'zippyback' ) ); ?>" required pattern=".{4,}" required title="<?php echo __( '4 characters minimum', 'simple-zippyshare-embed' ); ?>" /></td>
 	    </tr>
 
 	    <tr valign="top">
-	    <th scope="row">Play and Full Waveform Color</th>
-	    <td><input type="color" name="zippyplay" value="<?php echo esc_attr( get_option( 'zippyplay' ) ); ?>" required pattern=".{4,}" required title="4 characters minimum" /></td>
+	    <th scope="row"><?php echo __( 'Play and Full Waveform Color', 'simple-zippyshare-embed' ); ?></th>
+	    <td><input type="color" name="zippyplay" value="<?php echo esc_attr( get_option( 'zippyplay' ) ); ?>" required pattern=".{4,}" required title="<?php echo __( '4 characters minimum', 'simple-zippyshare-embed' ); ?>" /></td>
 	    </tr>
 
 	    <tr valign="top">
-	    <th scope="row">Waveform Color</th>
-	    <td><input type="color" name="zippywave" value="<?php echo esc_attr( get_option( 'zippywave' ) ); ?>" required pattern=".{4,}" required title="4 characters minimum" /></td>
+	    <th scope="row"><?php echo __( 'Waveform Color', 'simple-zippyshare-embed' ); ?></th>
+	    <td><input type="color" name="zippywave" value="<?php echo esc_attr( get_option( 'zippywave' ) ); ?>" required pattern=".{4,}" required title="<?php echo __( '4 characters minimum', 'simple-zippyshare-embed' ); ?>" /></td>
 	    </tr>
 
 	    <tr valign="top">
-	    <th scope="row">Border Color</th>
-	    <td><input type="color" minlength="4" name="zippyborder" value="<?php echo esc_attr( get_option( 'zippyborder' ) ); ?>" required pattern=".{4,}" required title="4 characters minimum" /></td>
+	    <th scope="row"><?php echo __( 'Border Color', 'simple-zippyshare-embed' ); ?></th>
+	    <td><input type="color" minlength="4" name="zippyborder" value="<?php echo esc_attr( get_option( 'zippyborder' ) ); ?>" required pattern=".{4,}" required title="<?php echo __( '4 characters minimum', 'simple-zippyshare-embed' ); ?>" /></td>
 	    </tr>
 	</table>
 	
@@ -158,12 +158,12 @@ function zippy_settings_page() {
 	    submit_button();
 	}
 	else {?>
-	    <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes" /></p>
+	    <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="<?php echo __( 'Save Changes', 'simple-zippyshare-embed' ); ?>" /></p>
 	<?php } ?>
 
     </form>
     
-    Plugin by <a href="http://it-maniak.pl">Saibamen</a>
+    <?php echo __( 'Plugin by', 'simple-zippyshare-embed' ); ?> <a href="http://it-maniak.pl">Saibamen</a>
     <br /><br /><br /><br />
     
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
