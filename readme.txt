@@ -1,10 +1,10 @@
 === Simple Zippyshare Embed ===
 Contributors: Saibamen
 Donate link: http://it-maniak.pl/donate/
-Tags: media, embed, zippy, zippyshare, link, links, colors, music, mp3, plugin, music player, widget
+Tags: audio, colors, content, download, embed, embedding, link, links, media, mp3, music, music player, plugin, zippy, zippyshare, widget
 Requires at least: 3.0
 Tested up to: 3.9.1
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,10 @@ Just put your `download_button.png` to the `images` folder and replace it
 
 == Changelog ==
 
+= 1.3 =
+* Added widget - shows your Zippyshare stats and display name
+* Updated polish translation
+
 = 1.2 =
 * Added download button - you can change it in images folder
 * Updated polish translation
@@ -47,6 +51,9 @@ Just put your `download_button.png` to the `images` folder and replace it
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.3 =
+Added widget - shows your Zippyshare stats and display name
 
 = 1.2 =
 Added download button - you can change it in images folder
