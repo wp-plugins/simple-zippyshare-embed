@@ -208,3 +208,83 @@ function zippy_settings_page() {
     </div>
 <?php
 }
+
+// Widget
+class zippy_widget extends WP_Widget {
+    // constructor
+    function zippy_widget() {
+	parent::WP_Widget( false, $name = __( 'Zippyshare Profile Widget', 'simple-zippyshare-embed' ) );
+    }
+    // widget form creation
+    function form( $instance ) {
+	// Check values
+	if ( $instance ) {
+	    $title = esc_attr( $instance['title'] );
+	    $profile_url = esc_url( $instance['profile_url'] );
+	}
+	else {
+	    $title = '';
+	    $text = '';
+	}
+	?>
+	
+	<p>
+	    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php __( 'Title', 'simple-zippyshare-embed' ); ?></label>
+	    <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
+	</p>
+
+	<p>
+	    <label for="<?php echo $this->get_field_id( 'profile_url' ); ?>"><?php __( 'Zippyshare Profile URL:', 'simple-zippyshare-embed' ); ?></label>
+	    <input class="widefat" id="<?php echo $this->get_field_id( 'profile_url' ); ?>" name="<?php echo $this->get_field_name( 'profile_url' ); ?>" type="url" value="<?php echo $profile_url; ?>" />
+	</p>
+<?php
+    }
+    // widget update
+    function update( $new_instance, $old_instance ) {
+	$instance = $old_instance;
+	// Fields
+	$instance['title'] = esc_attr( $new_instance['title'] );
+	$instance['profile_url'] = esc_url_raw( $new_instance['profile_url'] );
+	return $instance;
+    }
+    // widget display
+    function widget( $args, $instance ) {
+	extract( $args );
+	// Widget options
+	$title = apply_filters( 'widget_title', $instance['title'] );
+	$profile_url = $instance['profile_url'];
+	
+	echo $before_widget;
+	// Display the widget
+	echo '<div class="widget-text wp_widget_plugin_box">';
+	
+	// Check if title is set
+	if ( $title ) {
+	    echo $before_title . $title . $after_title;
+	}
+	
+	// Check if profile_url is set
+	if ( $profile_url ) {
+	    $zippy_profile = file_get_contents( $profile_url );
+	    
+	    // Profile name
+	    preg_match("'<font class=\"profilename\"><a href=\"/(.*?)\">(.*?)</a></font>'si", $zippy_profile, $profilename);
+	    if( $profilename ) {
+		echo '<h4><a href="'. $profile_url. '">'. $profilename[2] .'</a></h4>';
+	    }
+	    
+	    // Previews and downloads
+	    preg_match("'title=\"Number of Previews\"> ([0-9]*) \|\ (.*?)title=\"Number of Downloads\"> ([0-9]*)</font>'si", $zippy_profile, $profilestats);
+	    if( $profilestats ) {
+		echo '<p class="wp_widget_plugin_text">'. __( 'Total Previews:', 'simple-zippyshare-embed' ) .' '. $profilestats[1]. '<br />'
+			. __( 'Total Downloads:', 'simple-zippyshare-embed' ) .' '. $profilestats[3] .'</p>';
+	    }
+	}
+	
+	echo '</div>';
+	echo $after_widget;
+    }
+}
+
+// register widget
+add_action( 'widgets_init', create_function( '', 'return register_widget( "zippy_widget" );' ) );
