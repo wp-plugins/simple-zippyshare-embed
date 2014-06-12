@@ -224,17 +224,17 @@ class zippy_widget extends WP_Widget {
 	}
 	else {
 	    $title = '';
-	    $text = '';
+	    $profile_url = '';
 	}
 	?>
 	
 	<p>
-	    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php __( 'Title', 'simple-zippyshare-embed' ); ?></label>
+	    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'simple-zippyshare-embed' ); ?></label>
 	    <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
 	</p>
 
 	<p>
-	    <label for="<?php echo $this->get_field_id( 'profile_url' ); ?>"><?php __( 'Zippyshare Profile URL:', 'simple-zippyshare-embed' ); ?></label>
+	    <label for="<?php echo $this->get_field_id( 'profile_url' ); ?>"><?php _e( 'Zippyshare Profile URL:', 'simple-zippyshare-embed' ); ?></label>
 	    <input class="widefat" id="<?php echo $this->get_field_id( 'profile_url' ); ?>" name="<?php echo $this->get_field_name( 'profile_url' ); ?>" type="url" value="<?php echo $profile_url; ?>" />
 	</p>
 <?php

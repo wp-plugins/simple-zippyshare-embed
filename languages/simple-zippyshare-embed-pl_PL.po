@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Polish language for 1.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/simple-zippyshare-embed\n"
-"POT-Creation-Date: 2014-06-10 22:35:33+00:00\n"
-"PO-Revision-Date: 2014-06-11 00:36+0100\n"
+"POT-Creation-Date: 2014-06-12 14:21:06+00:00\n"
+"PO-Revision-Date: 2014-06-12 16:31+0100\n"
 "Last-Translator: Adam Stachowicz <saibamenppl@gmail.com>\n"
 "Language-Team: Simple Zippyshare Embed <saibamenppl@gmail.com>\n"
 "Language: pl_PL\n"
@@ -77,3 +77,23 @@ msgstr "Zapisz zmiany"
 #: zippy-embed.php:197
 msgid "Plugin by"
 msgstr "Autor pluginu:"
+
+#: zippy-embed.php:216
+msgid "Zippyshare Profile Widget"
+msgstr "Widget Profil Zippyshare"
+
+#: zippy-embed.php:232
+msgid "Title"
+msgstr "Tytuł"
+
+#: zippy-embed.php:237
+msgid "Zippyshare Profile URL:"
+msgstr "Link do profilu Zippyshare:"
+
+#: zippy-embed.php:279
+msgid "Total Previews:"
+msgstr "Liczba odtworzeń:"
+
+#: zippy-embed.php:280
+msgid "Total Downloads:"
+msgstr "Liczba pobrań:"
