@@ -3,7 +3,7 @@
  * Plugin Name: Simple Zippyshare Embed
  * Plugin URI: http://it-maniak.pl
  * Description: Replace all zippyshare links to embed media.
- * Version: 1.3
+ * Version: 1.4
  * Author: Adam Stachowicz
  * Author URI: http://it-maniak.pl
  * License: GPLv2
@@ -266,11 +266,17 @@ class zippy_widget extends WP_Widget {
 	// Check if profile_url is set
 	if ( $profile_url ) {
 	    $zippy_profile = file_get_contents( $profile_url );
+		
+		// Avatar
+	    preg_match("'<img alt=\"avatar\" src=\"/(.*?)\" (.*?)/>'si", $zippy_profile, $profileavatar);
+	    if( $profileavatar ) {
+			echo '<a href="'. $profile_url. '"><img alt="avatar" src="http://www.zippyshare.com/'. $profileavatar[1] .'" height="100" width="100"/></a>';
+	    }
 	    
 	    // Profile name
 	    preg_match("'<font class=\"profilename\"><a href=\"/(.*?)\">(.*?)</a></font>'si", $zippy_profile, $profilename);
 	    if( $profilename ) {
-		echo '<h4><a href="'. $profile_url. '">'. $profilename[2] .'</a></h4>';
+			echo '<h4><a href="'. $profile_url. '">'. $profilename[2] .'</a></h4>';
 	    }
 	    
 	    // Previews and downloads
