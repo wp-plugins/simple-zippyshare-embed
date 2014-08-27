@@ -3,8 +3,8 @@ Contributors: Saibamen
 Donate link: http://it-maniak.pl/donate/
 Tags: audio, colors, content, download, embed, embedding, link, links, media, mp3, music, music player, plugin, zippy, zippyshare, widget
 Requires at least: 3.0
-Tested up to: 4.0-beta2
-Stable tag: 1.4
+Tested up to: 4.0
+Stable tag: 1.4.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,6 +33,9 @@ Just put your `download_button.png` to the `images` folder and replace it
 3. Working plugin
 
 == Changelog ==
+
+= 1.4.1 =
+* Tested up to 4.0 RC1
 
 = 1.4 =
 * Added avatar to widget
