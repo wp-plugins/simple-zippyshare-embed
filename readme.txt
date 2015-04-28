@@ -3,7 +3,7 @@ Contributors: Saibamen
 Donate link: http://it-maniak.pl/donate/
 Tags: audio, colors, content, download, embed, embedding, link, links, media, mp3, music, music player, plugin, zippy, zippyshare, widget
 Requires at least: 3.0
-Tested up to: 4.1
+Tested up to: 4.2.1
 Stable tag: 1.4.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
