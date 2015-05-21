@@ -3,8 +3,8 @@ Contributors: Saibamen
 Donate link: http://it-maniak.pl/donate/
 Tags: audio, colors, content, download, embed, embedding, link, links, media, mp3, music, music player, plugin, zippy, zippyshare, widget
 Requires at least: 3.0
-Tested up to: 4.2.1
-Stable tag: 1.4.2
+Tested up to: 4.2.2
+Stable tag: 1.5
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,10 @@ Just put your `download_button.png` to the `images` folder and replace it
 
 == Changelog ==
 
+= 1.5 =
+* Fixed preg_match_all() function to properly replace all ZippyShare link types
+* Tested up to 4.2.2
+
 = 1.4.2 =
 * Tested up to 4.1
 
@@ -61,6 +65,9 @@ Just put your `download_button.png` to the `images` folder and replace it
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.4 =
+Now properly shows embeds for all link types!
 
 = 1.4 =
 Added avatar to widget
